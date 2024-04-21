@@ -1,2 +1,2 @@
-# Exercises on Recursion in JavaScript
-Implementations of fibonacci and merge sort using recursive functions in JavaScript
+# Exercises on Algorithms in JavaScript
+Implementations of various algorithms in JavaScript
