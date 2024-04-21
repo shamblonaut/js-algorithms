@@ -15,4 +15,5 @@ function sort(array) {
   return sorted;
 }
 
-console.log(sort([105, 79, 100, 110]))
+let a = [3, 5, 1, 9, 4, 2, 8, 6, 10, 7];
+console.log(sort(a));
