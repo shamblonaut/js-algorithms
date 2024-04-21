@@ -8,6 +8,7 @@ The implemented algorithms are:
 - [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence)
 - [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort)
 - [Binary Search](https://en.wikipedia.org/wiki/Binary_search_algorithm)
+- [Long Multiplication](https://en.wikipedia.org/wiki/Multiplication_algorithm#Long_multiplication)
 
 ## Run code
 Ensure `node` (sometimes `nodejs` package) is installed on your system.
