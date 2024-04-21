@@ -21,5 +21,5 @@ Run any of the files (replace fileName.js with actual file names)
 ```sh
 node fileName.js
 ```
-**Note:** Some files may require additional arguments to passed to them
+**Note:** Some files may require additional arguments to be passed to them
 
