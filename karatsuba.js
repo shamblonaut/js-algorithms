@@ -2,7 +2,7 @@ function padZero(s, n) {
   return s + "0".repeat(Math.floor(n));
 }
 
-function multiply(x, y, step) {
+function multiply(x, y) {
   x = x.toString();
   y = y.toString();
 
@@ -20,9 +20,14 @@ function multiply(x, y, step) {
 
   const left = multiply(a, c);
   const right = multiply(b, d);
-  const middle = multiply(Number(a) + Number(b), Number(c) + Number(d)) - left - right;
+  const middle =
+    multiply(Number(a) + Number(b), Number(c) + Number(d)) - left - right;
 
-  return Number(padZero(multiply(a, c), 2 * Math.ceil(m))) + right + Number(padZero(middle, Math.ceil(m)));
+  return (
+    Number(padZero(multiply(a, c), 2 * Math.ceil(m))) +
+    right +
+    Number(padZero(middle, Math.ceil(m)))
+  );
 }
 
 const a = 12345;
