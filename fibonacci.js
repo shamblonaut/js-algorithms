@@ -11,7 +11,7 @@ function fibs(n) {
 function fibsRec(n) {
   if (n <= 1) return [0];
   if (n === 2) return [0, 1];
-  
+
   let a = fibsRec(n - 2);
   let b = fibsRec(n - 1);
   b.push(a[a.length - 1] + b[b.length - 1]);

@@ -2,7 +2,7 @@ function padZero(s, n) {
   return s + "0".repeat(Math.floor(n));
 }
 
-function multiply(x, y) {
+export function multiply(x, y) {
   x = x.toString();
   y = y.toString();
 

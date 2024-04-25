@@ -1,9 +1,10 @@
-function multiply(a, b) {
+export function multiply(a, b) {
   if (a.length < 1 || b.length < 1) return;
   else if (Number(a) === 0 || Number(b) === 0) return "0";
   else if (Number(a) === 1) return b;
   else if (Number(b) === 1) return a;
-  else if (a.length == 1 && b.length == 1) return (Number(a) * Number(b)).toString();
+  else if (a.length == 1 && b.length == 1)
+    return (Number(a) * Number(b)).toString();
   else if (a.length == 1) return multiply(b, a);
 
   let finalProduct = "";
@@ -12,9 +13,13 @@ function multiply(a, b) {
     const product = multiply(b, a[i]);
     const carryAdded = add(product[product.length - 1], carry);
     finalProduct = carryAdded[carryAdded.length - 1] + finalProduct;
-    
-    const leftOverProduct = product.length > 1 ? product.substring(0, product.length - 1) : "0";
-    const leftOverCarry = carryAdded.length > 1 ? carryAdded.substring(0, carryAdded.length - 1) : "0";
+
+    const leftOverProduct =
+      product.length > 1 ? product.substring(0, product.length - 1) : "0";
+    const leftOverCarry =
+      carryAdded.length > 1
+        ? carryAdded.substring(0, carryAdded.length - 1)
+        : "0";
     carry = add(leftOverProduct, leftOverCarry);
   }
   if (carry !== "0") finalProduct = carry + finalProduct;
@@ -22,7 +27,7 @@ function multiply(a, b) {
   return finalProduct;
 }
 
-function add(...args) {
+export function add(...args) {
   if (!args) return "0";
 
   const larger = args[findMaxIndex(args)];
@@ -33,7 +38,7 @@ function add(...args) {
     let columnSum = carry;
     for (let j = 0; j < args.length; j++) {
       const c = args[j][args[j].length - 1 - i];
-      columnSum += c ? BigInt(c) : BigInt(0);;
+      columnSum += c ? BigInt(c) : BigInt(0);
     }
     columnSum = columnSum.toString();
     sum = columnSum[columnSum.length - 1] + sum;
@@ -52,11 +57,13 @@ function findMaxIndex(a) {
   return max;
 }
 
-let a = "9226983090495358799498674353697058110463656843086458502279084066874505225380360376132818231899745943";
-let b = "5449675743109474564442669327447639630580480335902347820671271610144377555186774062475786584219560636";
+let a =
+  "9226983090495358799498674353697058110463656843086458502279084066874505225380360376132818231899745943";
+let b =
+  "5449675743109474564442669327447639630580480335902347820671271610144377555186774062475786584219560636";
 
 let x = process.argv[2];
 let y = process.argv[3];
 
-let product = multiply(x ? x: a, y ? y : b).replace(/^0+/, "");
+let product = multiply(x ? x : a, y ? y : b).replace(/^0+/, "");
 console.log(product);
